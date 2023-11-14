@@ -1,0 +1,51 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Versión del servidor:         8.0.35 - MySQL Community Server - GPL
+-- SO del servidor:              Win64
+-- HeidiSQL Versión:             12.5.0.6677
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Volcando estructura de base de datos para db_integrador
+CREATE DATABASE IF NOT EXISTS `db_integrador` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `db_integrador`;
+
+-- Volcando estructura para tabla db_integrador.tp_db
+CREATE TABLE IF NOT EXISTS `tp_db` (
+  `id_orador` int NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `apellido` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `email` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `tema` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha_alta` timestamp NOT NULL,
+  PRIMARY KEY (`id_orador`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- Volcando datos para la tabla db_integrador.tp_db: ~10 rows (aproximadamente)
+INSERT INTO `tp_db` (`id_orador`, `nombre`, `apellido`, `email`, `tema`, `fecha_alta`) VALUES
+	(1, 'Steve', 'Jobs', 'sjobs@apple.com', 'javascript, react', '2023-11-14 17:52:36'),
+	(2, 'Biill', 'Gates', 'bgates@microsoft.com', 'javascript, react', '2023-11-14 17:54:02'),
+	(3, 'Ada', 'Lovelace', 'alovelace@matematica.com', 'negocios, startups', '2023-11-14 17:55:15'),
+	(4, 'Brian', 'Jones', 'bjones@rclub27.com', 'musica, rolling stones', '2023-11-14 17:56:31'),
+	(5, 'Jimi', 'Hendrix', 'jhendrix@club27.com', 'musica, guitarra', '2023-11-14 17:57:45'),
+	(6, 'Janis', 'Joplin', 'jjoplin@club27.com', 'musica, cantante', '2023-11-14 18:01:23'),
+	(7, 'Kurt', 'Cobain', 'kcobain@club27.com', 'musica, nirvana', '2023-11-14 18:05:31'),
+	(8, 'Jean-Michel', 'Basquiat', 'jmbasquiat@club27.com', 'arte, grafiti', '2023-11-14 18:10:37'),
+	(9, 'Rodrigo', 'Bueno', 'elpotro@club27.com', 'musica, cuarteto', '2023-11-14 18:11:42'),
+	(10, 'Amy', 'Winehouse', 'awinehouse@club27.com', 'musica, cantante', '2023-11-14 18:25:50');
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
